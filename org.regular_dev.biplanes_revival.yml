@@ -25,7 +25,7 @@ modules:
     builddir: true
     sources:
       - type: git
-        commit: 65b7e762e10645297d35e0ab64c4d3a64cf7da8e
+        commit: 9b47c7d608d7bc26f2a172dfc3954d358f143a21
         url: https://github.com/regular-dev/biplanes-revival
     cleanup:
       - '/include'
