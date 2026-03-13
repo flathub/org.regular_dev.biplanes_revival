@@ -1,6 +1,6 @@
 id: org.regular_dev.biplanes_revival
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: BiplanesRevival
 finish-args:
@@ -12,6 +12,7 @@ finish-args:
   - --device=dri
   - --env=BIPLANES_ASSETS_ROOT=/app/share/biplanes-revival/
 modules:
+  - shared-modules/SDL2/SDL2_image.json
   - name: BiplanesRevival
     buildsystem: cmake-ninja
     config-opts:
@@ -24,10 +25,10 @@ modules:
       - cp -R ${FLATPAK_BUILDER_BUILDDIR}/assets /app/share/biplanes-revival
     builddir: true
     sources:
-      - type: git
-        commit: 9b47c7d608d7bc26f2a172dfc3954d358f143a21
-        url: https://github.com/regular-dev/biplanes-revival
+      - type: archive
+        url: https://github.com/regular-dev/biplanes-revival/releases/download/v1.2.1/biplanes-revival-v1.2.1.tar.gz
+        sha256: 9e2466c1dc63d2d41fed6d7cda1c049b3fc887f1f6d5e7e987c90363c9d2284a
     cleanup:
-      - '/include'
-      - '/bin/assets'
+      - /include
+      - /bin/assets
 
